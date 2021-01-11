@@ -25,7 +25,7 @@ public struct SlamTaskSpellBook {
     // MARK: Static Function
     
     /// Share singleton for AppDelegate if supporting this protocol.
-    static func sharedApp() -> SlamTaskAppProtocol? {
+    public static func sharedApp() -> SlamTaskAppProtocol? {
         return NSApp.delegate as? SlamTaskAppProtocol
     }
     

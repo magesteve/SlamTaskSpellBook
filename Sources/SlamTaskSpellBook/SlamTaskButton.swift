@@ -52,7 +52,7 @@ public class SlamTaskButton: NSButton {
     
     /// Action to invoked with user presses button.
     /// - Parameter sender: Object that invoked the method
-    @objc func slamTaskButtonAction(sender: Any!) {
+    @objc public func slamTaskButtonAction(sender: Any!) {
         let title = slamTitle
         
         guard !title.isEmpty,
