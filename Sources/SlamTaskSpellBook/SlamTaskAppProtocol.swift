@@ -33,15 +33,15 @@ public extension SlamTaskAppProtocol {
                     return task
                 }
                 
-                if let doc = foundWindow.windowController?.document as? NSDocument {
-                    if let docBoss = doc as? SlamTaskBossProtocol {
-                        if let task = docBoss.findTask(title: title) {
-                            return task
-                        }
+            }
+            
+            if let doc = foundWindow.windowController?.document as? NSDocument {
+                if let docBoss = doc as? SlamTaskBossProtocol {
+                    if let task = docBoss.findTask(title: title) {
+                        return task
                     }
                 }
             }
-            
         }
         
         return findTask(title: title)
