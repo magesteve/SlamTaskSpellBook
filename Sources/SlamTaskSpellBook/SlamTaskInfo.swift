@@ -8,7 +8,7 @@
 import Foundation
 import Cocoa
 
-/// Structure with details of invoking menu item (or other items).
+/// Structure with details of invoking item (MenuItem, ToolbarItem, Button).
 public struct SlamTaskInfo {
     
     // word associated with menu item

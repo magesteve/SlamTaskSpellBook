@@ -7,10 +7,12 @@
 
 import Foundation
 import Cocoa
+import CocoaSpellBook
 
 // MARK: - Protocol
 
-/// App Delegate protocol for Slam
+/// App Delegate protocol for those that support SlamTasks
+/// Use this protocol instead of SlamTaskBossProtocol
 public protocol SlamTaskAppProtocol: NSApplicationDelegate, SlamTaskBossProtocol {
     
 }
@@ -56,5 +58,19 @@ public extension SlamTaskAppProtocol {
         if let task = appFindTask(title: title, forWindow: window) {
             task.runTask(info: info)
         }
+    }
+    
+    /// Register standard tasks.
+    func standardTasks() {
+        add(task: SlamTask(title: SlamTaskSpellBook.openUrlTaskName, action: {info in
+            CocoaSpellBook.openURL(info.word)
+        }))
+        add(task: SlamTask(title: SlamTaskSpellBook.openFileTaskName, action: {info in
+            CocoaSpellBook.openURL(info.word)
+        }))
+        add(task: SlamTask(title: SlamTaskSpellBook.openHelpTaskName, action: {info in
+            CocoaSpellBook.openHelp(info.word)
+        }))
+        
     }
 }

@@ -10,7 +10,7 @@ import Cocoa
 
 // MARK: - Class
 
-/// Closure based button
+/// Task based button (subclass of NSButton).
 public class SlamTaskButton: NSButton {
     
     // MARK: Inspectable Properties
@@ -21,9 +21,10 @@ public class SlamTaskButton: NSButton {
     
     @IBInspectable public var slamTag: Int = 0
     
-    // MARK: Public Functions
+    // MARK: Private Functions
     
-    public func makeInfo() -> SlamTaskInfo {
+    /// Make a info structure filled with details.
+    func makeInfo() -> SlamTaskInfo {
         var info = SlamTaskInfo()
         
         info.word = slamWord

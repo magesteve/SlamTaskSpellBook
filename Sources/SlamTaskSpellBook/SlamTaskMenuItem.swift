@@ -10,7 +10,7 @@ import Cocoa
 
 // MARK: Class
 
-/// Closure based version of Menus (NSMenuItem)
+/// Task based version of Menus (NSMenuItem).
 ///
 /// While this action can be set for this menu item, it is more common to set the Task. This way MenuItems, ToolbarItems and such can share same Task. For this to work, the App  (and any other similar controllers) must support the corect protocol, and Tasks must be registered.
 @objc public class SlamTaskMenuItem: NSMenuItem {
@@ -23,9 +23,10 @@ import Cocoa
     
     @IBInspectable public var slamTag: Int = 0
     
-    // MARK: Public Functions
+    // MARK: Private Functions
     
-    public func makeInfo() -> SlamTaskInfo {
+    /// Make a info structure filled with details.
+    func makeInfo() -> SlamTaskInfo {
         var info = SlamTaskInfo()
         
         info.word = slamWord

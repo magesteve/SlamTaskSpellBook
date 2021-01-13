@@ -10,12 +10,14 @@ import Cocoa
 
 // MARK: - Protocol
 
-/// Protocol for Controllers of tasks
+/// Protocol for Controllers of tasks.
+/// Use this for Documents, Window Controllers & VIew Controllers.  Use SlamTaskAppProtocol for App Delegates.
 public protocol SlamTaskBossProtocol {
 
     // MARK: - Properties
 
     /// List of named tasks items
+    /// This property must be set to SlamTaskList object.
     var listTasks: SlamTaskList { get }
 
 }

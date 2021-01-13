@@ -8,8 +8,25 @@
 import Foundation
 import Cocoa
 
-/// Abstract Structure for SlamTask
+/// Abstract Structure for SlamTaskSpellBook
 public struct SlamTaskSpellBook {
+    
+    // MARK: Task Name Static Constants
+    
+    /// Name to use for Open URL Task
+    public static let openUrlTaskName = "url"
+    
+    /// Name to use for Open Bundled File Task
+    public static let openFileTaskName = "file"
+    
+    /// Name to use for Open Help Task
+    public static let openHelpTaskName = "help"
+    
+    /// Name to use for Save Image Task
+    public static let saveImageTaskName = "saveimage"
+    
+    /// Name to use for Save SVG Task
+    public static let saveSVGTaskName = "savesvg"
     
     // MARK: Special Purpose Closures
     

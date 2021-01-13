@@ -7,7 +7,7 @@
 
 import Cocoa
 
-/// Closure based version of NSToolbarItem
+/// Task based version of Toolbar Itme (NSToolbarItem).
 @objc class SlamTaskToolbarItem: NSToolbarItem {
 
     // MARK: Inspectable Properties
@@ -19,9 +19,10 @@ import Cocoa
     @IBInspectable public var slamTag: Int = 0
     
 
-    // MARK: Public Functions
+    // MARK: Private Functions
     
-    public func makeInfo() -> SlamTaskInfo {
+    /// Make a info structure filled with details.
+    func makeInfo() -> SlamTaskInfo {
         var info = SlamTaskInfo()
         
         info.word = slamWord
