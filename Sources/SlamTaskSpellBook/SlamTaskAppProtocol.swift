@@ -30,13 +30,19 @@ public extension SlamTaskAppProtocol {
         let aWindow:NSWindow? = window ?? NSApp.mainWindow
         
         if let foundWindow = aWindow {
-            if let aVC = foundWindow.contentViewController as? SlamTaskBossProtocol {
-                if let task = aVC.findTask(title: title) {
+            if let viewControllerBoss = foundWindow.contentViewController as? SlamTaskBossProtocol {
+                if let task = viewControllerBoss.findTask(title: title) {
                     return task
                 }
                 
             }
-            
+
+            if let windowBoss = foundWindow.windowController as? SlamTaskBossProtocol {
+                if let task = windowBoss.findTask(title: title) {
+                    return task
+                }
+            }
+
             if let doc = foundWindow.windowController?.document as? NSDocument {
                 if let docBoss = doc as? SlamTaskBossProtocol {
                     if let task = docBoss.findTask(title: title) {
