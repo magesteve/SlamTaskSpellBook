@@ -66,7 +66,7 @@ public class SlamTaskButton: NSButton {
 
     // MARK: - Static Public Methods
     
-    public func slamTaskButtonPrepare(button: SlamTaskButton) {
+    public static func slamTaskButtonPrepare(button: SlamTaskButton) {
         let title = button.slamTitle
 
         guard !title.isEmpty, let app = SlamTaskSpellBook.sharedApp() else {
