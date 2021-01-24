@@ -64,6 +64,34 @@ public class SlamTaskButton: NSButton {
         app.appRunTask(info: info, title: title, forWindow: nil)
     }
 
+    // MARK: - Static Public Methods
+    
+    public func slamTaskButtonPrepare(button: SlamTaskButton) {
+        let title = button.slamTitle
+
+        guard !title.isEmpty, let app = SlamTaskSpellBook.sharedApp() else {
+            button.isEnabled = false
+            
+            return
+        }
+        
+        var ok = false
+        let info = button.makeInfo()
+        
+        if let task = app.appFindTask(title: title, forWindow: nil) {
+            ok = true
+            
+            if let source = task.label {
+                button.title = source(info)
+            }
+
+            if let source = task.valid {
+                ok =  source(info)
+            }
+        }
+        
+        button.isEnabled = ok
+    }
 }
 
 
