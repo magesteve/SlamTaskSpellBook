@@ -25,7 +25,7 @@ public class SlamTaskGesture: NSClickGestureRecognizer {
     
     /// Make a info structure filled with details.
     func makeInfo() -> SlamTaskInfo {
-        var info = SlamTaskInfo()
+        var info = SlamTaskInfo(slamWord, slamTag)
         
         info.word = slamWord
         info.tag = slamTag

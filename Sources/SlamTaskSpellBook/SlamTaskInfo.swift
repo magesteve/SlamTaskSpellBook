@@ -16,4 +16,11 @@ public struct SlamTaskInfo {
     
     /// tag (int) associated with menu item.
     public var tag: Int = 0
+    
+    // MARK: Lifecycle
+    
+    public init(_ word: String = "", _ tag: Int = 0) {
+        self.word = word
+        self.tag = tag
+    }
 }
