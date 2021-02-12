@@ -35,7 +35,7 @@ public class SlamTaskButton: NSButton {
 
     // MARK: - Lifecycle Methods
     
-    override init(frame frameRect: NSRect) {
+    public override init(frame frameRect: NSRect) {
         super.init(frame: frameRect)
         
         self.target = self
@@ -49,6 +49,13 @@ public class SlamTaskButton: NSButton {
         self.action = #selector(slamTaskButtonAction)
     }
     
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        self.target = self
+        self.action = #selector(slamTaskButtonAction)
+    }
+
     // MARK: - Action Methods
     
     /// Action to invoked with user presses button.

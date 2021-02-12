@@ -36,17 +36,24 @@ import Cocoa
     public override init(itemIdentifier: NSToolbarItem.Identifier) {
         super.init(itemIdentifier: itemIdentifier)
 
+        target = self
+        action = #selector(slamToolbarItemAction(_:))
+
         autovalidates = false
     }
     
-    override func validate() {
-        action = #selector(slamToolbarItemAction(_:))
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        
         target = self
+        action = #selector(slamToolbarItemAction(_:))
+    }
 
+    public override func validate() {
         guard let app = SlamTaskSpellBook.sharedApp() else { return }
         
         if !slamTitle.isEmpty {
-            if let task = app.appFindTask(title: title, forWindow: view?.window) {
+            if let task = app.appFindTask(title: slamTitle, forWindow: view?.window) {
                 let info = makeInfo()
 
                 if let source = task.valid {
@@ -71,7 +78,7 @@ import Cocoa
         }
         
         if !menu.slamTitle.isEmpty {
-            if let task = app.appFindTask(title: title, forWindow: view?.window) {
+            if let task = app.appFindTask(title: slamTitle, forWindow: view?.window) {
                 let info = makeInfo()
 
                 return task.validateTask(info: info)
@@ -89,7 +96,7 @@ import Cocoa
         }
 
         if !slamTitle.isEmpty {
-            if let task = app.appFindTask(title: title, forWindow: view?.window) {
+            if let task = app.appFindTask(title: slamTitle, forWindow: view?.window) {
                 let info = makeInfo()
 
                 task.runTask(info: info)

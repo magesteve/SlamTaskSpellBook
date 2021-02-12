@@ -40,17 +40,24 @@ import Cocoa
     public override init(title string: String, action selector: Selector?, keyEquivalent charCode: String) {
         super.init(title:string, action:selector, keyEquivalent:charCode)
         
-        action = #selector(slamTaskMenuAction)
         target = self
+        action = #selector(slamTaskMenuAction)
     }
     
     public required init(coder decoder: NSCoder) {
         super.init(coder: decoder)
         
-        action = #selector(slamTaskMenuAction)
         target = self
+        action = #selector(slamTaskMenuAction)
     }
     
+    public override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        target = self
+        action = #selector(slamTaskMenuAction)
+    }
+
     @objc public func validateMenuItem(_ item: NSMenuItem) -> Bool {
         let actionSelector = #selector(slamTaskMenuAction)
         if item.action == actionSelector {
