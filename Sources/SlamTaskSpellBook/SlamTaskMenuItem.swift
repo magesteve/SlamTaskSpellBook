@@ -8,14 +8,14 @@
 import Foundation
 import Cocoa
 
-// MARK: Class
+// MARK: - Class
 
 /// Task based version of Menus (NSMenuItem).
 ///
 /// While this action can be set for this menu item, it is more common to set the Task. This way MenuItems, ToolbarItems and such can share same Task. For this to work, the App  (and any other similar controllers) must support the corect protocol, and Tasks must be registered.
 @objc public class SlamTaskMenuItem: NSMenuItem {
     
-    // MARK: Inspectable Properties
+    // MARK: - Inspectable Properties
     
     @IBInspectable public var slamTitle: String = ""
     
@@ -23,7 +23,7 @@ import Cocoa
     
     @IBInspectable public var slamTag: Int = 0
     
-    // MARK: Private Functions
+    // MARK: - Private Functions
     
     /// Make a info structure filled with details.
     func makeInfo() -> SlamTaskInfo {
@@ -35,7 +35,7 @@ import Cocoa
         return info
     }
 
-    // MARK: Lifecycle Functions
+    // MARK: - Lifecycle
     
     public override init(title string: String, action selector: Selector?, keyEquivalent charCode: String) {
         super.init(title:string, action:selector, keyEquivalent:charCode)
@@ -138,7 +138,7 @@ import Cocoa
         return false
     }
     
-    // MARK: Action Functions
+    // MARK: - Action Functions
     
     /// Action to to invoked when menu item selected.
     /// - Parameter sender: Object that invoked the function

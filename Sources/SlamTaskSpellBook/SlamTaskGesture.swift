@@ -13,7 +13,7 @@ import Cocoa
 /// Task based button (subclass of NSButton).
 public class SlamTaskGesture: NSClickGestureRecognizer {
     
-    // MARK: Inspectable Properties
+    // MARK: - Inspectable Properties
     
     @IBInspectable public var slamTitle: String = ""
     
@@ -21,7 +21,7 @@ public class SlamTaskGesture: NSClickGestureRecognizer {
     
     @IBInspectable public var slamTag: Int = 0
     
-    // MARK: Private Functions
+    // MARK: - Private Functions
     
     /// Make a info structure filled with details.
     func makeInfo() -> SlamTaskInfo {
@@ -50,8 +50,9 @@ public class SlamTaskGesture: NSClickGestureRecognizer {
     
 }
 
-/// MARK: Extension
+// MARK: - Extension
 
+// Extenion to NSView to handle Tasks.
 public extension NSView {
     
     /// Action to invoked with user presses button.

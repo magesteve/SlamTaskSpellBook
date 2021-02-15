@@ -8,8 +8,12 @@
 import Foundation
 import Cocoa
 
+// MARK: - Structure
+
 /// Structure with details of invoking item (MenuItem, ToolbarItem, Button).
 public struct SlamTaskInfo {
+    
+    // MARK: - Variables
     
     // word associated with menu item
     public var word: String = ""
@@ -17,7 +21,7 @@ public struct SlamTaskInfo {
     /// tag (int) associated with menu item.
     public var tag: Int = 0
     
-    // MARK: Lifecycle
+    // MARK: - Lifecycle
     
     public init(_ word: String = "", _ tag: Int = 0) {
         self.word = word

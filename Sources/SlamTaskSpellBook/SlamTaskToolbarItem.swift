@@ -7,10 +7,12 @@
 
 import Cocoa
 
+// MARK: - Class
+
 /// Task based version of Toolbar Itme (NSToolbarItem).
 @objc class SlamTaskToolbarItem: NSToolbarItem {
 
-    // MARK: Inspectable Properties
+    // MARK: - Inspectable Properties
     
     @IBInspectable public var slamTitle: String = ""
     
@@ -19,7 +21,7 @@ import Cocoa
     @IBInspectable public var slamTag: Int = 0
     
 
-    // MARK: Private Functions
+    // MARK: - Private Functions
     
     /// Make a info structure filled with details.
     func makeInfo() -> SlamTaskInfo {
@@ -31,7 +33,7 @@ import Cocoa
         return info
     }
 
-    // MARK: Lifecycle Methods
+    // MARK: - Lifecycle Methods
     
     public override init(itemIdentifier: NSToolbarItem.Identifier) {
         super.init(itemIdentifier: itemIdentifier)
@@ -88,7 +90,7 @@ import Cocoa
         return false
     }
     
-    // MARK: Action Methods
+    // MARK: - Action Methods
     
     @IBAction @objc public func slamToolbarItemAction(_ sender: Any) {
         guard let app = SlamTaskSpellBook.sharedApp() else {

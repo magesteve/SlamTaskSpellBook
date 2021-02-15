@@ -8,7 +8,7 @@
 import Foundation
 import Cocoa
 
-// MARK: Class
+// MARK: - Class
 
 /// Single named task to complete
 ///
@@ -17,7 +17,7 @@ import Cocoa
 /// Beside the action itself, the Task object also used closures to define any user interface setting for the task (ex: acvtions what are invalid woud dim their appeareance).  These elements invlude is action is Valid, if action should show a Mark and if action has a string Label.
 public class SlamTask {
     
-    // MARK: Public Properties
+    // MARK: - Public Properties
     
     // Title identifier of task.
     public var title: String
@@ -34,7 +34,7 @@ public class SlamTask {
     /// Task's text source closure
     public let label: SlamTaskSpellBook.ActionStringClosure?
 
-    // MARK: Lifecycle Functions
+    // MARK: - Lifecycle Functions
     
     /// Tasks Initializer, filling in required and optional fields.
     ///

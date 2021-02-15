@@ -8,10 +8,12 @@
 import Foundation
 import Cocoa
 
+// MARK: - Structures
+
 /// Abstract Structure for SlamTaskSpellBook
 public struct SlamTaskSpellBook {
     
-    // MARK: Task Name Static Constants
+    // MARK: - Task Name Static Constants
     
     /// Name to use for Open URL Task
     public static let openUrlTaskName = "url"
@@ -28,7 +30,7 @@ public struct SlamTaskSpellBook {
     /// Name to use for Save SVG Task
     public static let saveSVGTaskName = "savesvg"
     
-    // MARK: Special Purpose Closures
+    // MARK: - Special Purpose Closures
     
     /// closure that is  passed int & string, but returns nothing
     public typealias  ActionClosure = (SlamTaskInfo) -> Void
@@ -39,7 +41,7 @@ public struct SlamTaskSpellBook {
     /// closure that is  passed int & string, returns String
     public typealias  ActionStringClosure = (SlamTaskInfo) -> String
 
-    // MARK: Static Function
+    // MARK: - Static Function
     
     /// Share singleton for AppDelegate if supporting this protocol.
     public static func sharedApp() -> SlamTaskAppProtocol? {

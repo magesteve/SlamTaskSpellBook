@@ -13,7 +13,7 @@ import Cocoa
 /// Task based button (subclass of NSButton).
 public class SlamTaskButton: NSButton {
     
-    // MARK: Inspectable Properties
+    // MARK: - Inspectable Properties
     
     @IBInspectable public var slamTitle: String = ""
     
@@ -21,7 +21,7 @@ public class SlamTaskButton: NSButton {
     
     @IBInspectable public var slamTag: Int = 0
     
-    // MARK: Private Functions
+    // MARK: - Private Functions
     
     /// Make a info structure filled with details.
     func makeInfo() -> SlamTaskInfo {
