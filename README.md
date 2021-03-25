@@ -56,6 +56,10 @@ Task based version of Toolbar Item (subclass of NSToolbarItem). It has IBInspect
 
 Task based version of button (subclass of NSButton). It has IBInspectable title (string), word (string) & tag (Int). There is no need to attach this menu to any IBAction. When the user selects it, the Task with the associated title will be invoked.  Only if the static function slamTaskButtonPrepare(button:) is called, will the optional appearance closures try to change the appearance of the button.
 
+#### Touchbar Items
+
+SlamTaskButtons can be used with Touchbar & Touchbar Button Items. After creating a Touchbar, drag a touchbar item with a button on it, into the touchbar. This places a NSTouchbarItem containing NSView it, that contains a normal NSButton. Then change the NSButton to SlamTaskButton. Configure it normally, and it will just work.
+
 ## Demo App
 
 Sample code using this SpellBook can be found in the open-source Cocoa App [CocoaGrimoire](https://github.com/magesteve/CocoaGrimoire). Other SpellBooks by the author are also demonstrated there.
